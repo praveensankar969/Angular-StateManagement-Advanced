@@ -45,7 +45,7 @@ export class CoursesStore{
         this.SaveCourses.next(newCourses);
 
         return this.http.put("/api/courses/"+courseId, changes).pipe(catchError(err=>{
-            this.messageService.showError("Couldn't fetch courses from server!!")
+            this.messageService.showError("Couldn't update courses in server!!")
             return throwError(err);
           }), shareReplay());
 
